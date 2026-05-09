@@ -1,0 +1,4 @@
+interface:
+  display_name: "Validate Quant Research"
+  short_description: "Evidence workflow for quant backtests"
+  default_prompt: "Use $validate-quant-research to audit this strategy or factor before changing code."
