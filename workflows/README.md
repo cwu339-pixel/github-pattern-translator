@@ -25,6 +25,26 @@ workflows/<workflow-name>/
 
 Use `workflows/_template/` as the starting point.
 
+## Quickstart
+
+From the repository root:
+
+```bash
+python scripts/init_workflow.py auto-research-breakdown
+python scripts/render_worker_prompt.py workflows/auto-research-breakdown
+python scripts/check_handoff.py workflows/auto-research-breakdown
+```
+
+`init_workflow.py` creates a workflow from `workflows/_template/` and refuses
+to overwrite an existing workflow unless `--force` is provided.
+
+`render_worker_prompt.py` prints a copy-paste prompt for a worker session,
+including the execution prompt, task card, workflow, and current handoff state.
+
+`check_handoff.py` exits nonzero while required handoff sections are missing or
+still placeholder-only. That is expected for a newly initialized workflow; run it
+again after the worker updates `HANDOFF.md`.
+
 ## Responsibilities
 
 ### Translator Session
