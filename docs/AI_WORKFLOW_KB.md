@@ -77,6 +77,29 @@ Every long-running task should end with:
 If a conclusion matters after compact, put it in a durable file or sidecar
 memory. Do not trust chat compact as the source of truth.
 
+## Workflow Materialization
+
+After translating a pattern, create a workflow folder when execution needs to be
+stable across sessions:
+
+```text
+workflows/<workflow-name>/
+  WORKFLOW.md
+  TASK_CARD.md
+  EXECUTION_PROMPT.md
+  HANDOFF.md
+```
+
+Use the lifecycle:
+
+```text
+Translate -> Materialize -> Execute -> Handoff -> Re-anchor
+```
+
+The translator owns `WORKFLOW.md`, `TASK_CARD.md`, and review of `HANDOFF.md`.
+The worker reads `EXECUTION_PROMPT.md`, executes the scoped task, and updates
+`HANDOFF.md`.
+
 ## Quality Gate
 
 Never call work complete unless there is evidence:

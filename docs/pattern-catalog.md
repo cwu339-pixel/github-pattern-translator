@@ -263,3 +263,30 @@ Failure to avoid:
 - generating a polished report with no command trail
 
 Verdict: adopt.
+
+## P11: Workflow Materialization
+
+External signal:
+
+- file-backed agent workspaces
+- long-running subagent workflows
+- durable handoff systems
+
+Operating idea:
+
+Translated patterns should become executable file bundles before a worker starts.
+
+Local translation:
+
+- `WORKFLOW.md` owns the reusable pattern.
+- `TASK_CARD.md` owns the current task facts and acceptance criteria.
+- `EXECUTION_PROMPT.md` owns the worker instructions.
+- `HANDOFF.md` owns recovery state and next open loops.
+
+Failure to avoid:
+
+- leaving the translated pattern in chat only
+- restarting from memory after compact
+- letting worker sessions expand scope from adjacent questions
+
+Verdict: adopt.

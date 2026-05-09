@@ -21,6 +21,21 @@ Output:
 5. Top 5 changes worth writing into the Pattern Translator.
 ```
 
+## After Translation
+
+If the translated pattern will be executed by a worker session or reused later,
+materialize it into:
+
+```text
+workflows/<workflow-name>/
+  WORKFLOW.md
+  TASK_CARD.md
+  EXECUTION_PROMPT.md
+  HANDOFF.md
+```
+
+Use `workflows/_template/` as the starting point.
+
 ## Translation Card
 
 Every repo card should use this shape:
